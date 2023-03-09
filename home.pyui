@@ -1,0 +1,170 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 0}, {323, 45}}",
+        "class" : "Label",
+        "attributes" : {
+          "border_width" : 0,
+          "name" : "title",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "2045EA5F-A5AD-47A5-A481-0F2F7DBF4B05",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "Capital Connection Profit",
+          "corner_radius" : 5,
+          "font_size" : 24,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 72}, {208, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label1",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "0A3FACAE-12CC-4579-900F-DDF35777B7DC",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Connecting City Citizens",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 112}, {208, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label2",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "C6C092E9-EC22-4ED5-A60D-DE1A913AC092",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : " Capital City Citizens",
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{222, 72}, {83, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "border_width" : 1,
+          "font_size" : 17,
+          "frame" : "{{62, 183}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "F363C8F4-AF8A-4EA4-BF7B-1F7D67184B28",
+          "alignment" : "left",
+          "corner_radius" : 5,
+          "autocorrection_type" : "default",
+          "name" : "conn_city_citizen_field",
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{222, 112}, {83, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "border_width" : 1,
+          "font_name" : "<System>",
+          "frame" : "{{62, 183}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "F363C8F4-AF8A-4EA4-BF7B-1F7D67184B28",
+          "alignment" : "left",
+          "corner_radius" : 5,
+          "autocorrection_type" : "default",
+          "font_size" : 17,
+          "name" : "cap_city_citizen_field"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{58, 167}, {200, 47}}",
+        "class" : "Button",
+        "attributes" : {
+          "border_width" : 1,
+          "frame" : "{{122, 183}, {80, 32}}",
+          "title" : "Calculate",
+          "uuid" : "CC46DFA4-B584-404D-88A5-535EC2656EF3",
+          "class" : "Button",
+          "corner_radius" : 5,
+          "name" : "calcButton",
+          "font_size" : 15
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{84, 242}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "label3",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "5EA87605-AD8E-4DA6-82D3-B33EA4DA563F",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "Result",
+          "font_size" : 22,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{84, 282}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "name" : "result_label",
+          "border_width" : 1,
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "DE47696A-29B7-46B3-9AAF-7839A7E0655C",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "",
+          "corner_radius" : 5,
+          "font_size" : 18,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      }
+    ],
+    "frame" : "{{0, 0}, {323, 397}}",
+    "class" : "View",
+    "attributes" : {
+      "enabled" : true,
+      "background_color" : "RGBA(1.000000,1.000000,1.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
