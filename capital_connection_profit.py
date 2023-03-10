@@ -56,7 +56,7 @@ class CapitalConnectionProfitView(ui.View):
     def _clear_on_calculate_switch(self):
         if not self.__clear_on_calculate_switch:
             self.__clear_on_calculate_switch = ui.Switch(
-                name="clear_on_calculate_switch", frame=(162, 347, 51, 31), value=True
+                name="clear_on_calculate_switch", frame=(222, 193, 51, 31), value=True
             )
         return self.__clear_on_calculate_switch
 
@@ -70,7 +70,7 @@ class CapitalConnectionProfitView(ui.View):
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
-                action=lambda: self._calculate(),
+                action=lambda sender: self._calculate(sender),
             )
         return self.__calculate_button
 
@@ -139,6 +139,14 @@ class CapitalConnectionProfitView(ui.View):
             )
         )
         self.add_subview(self._num_tiles_field)
+        self.add_subview(
+            ui.Label(
+                name="clear_on_calculate_label",
+                frame=(6, 192, 208, 32),
+                font=(SYSTEM_FONT, 18),
+                text="Clear on Calculate",
+            )
+        )
         self.add_subview(self._clear_on_calculate_switch)
         self.add_subview(self._calculate_button)
         self.add_subview(
@@ -162,7 +170,7 @@ class CapitalConnectionProfitView(ui.View):
         )
         self.add_subview(self._net_yield_label)
 
-    def _calculate(self):
+    def _calculate(self, sender):
         print("calculate stub")
 
 
