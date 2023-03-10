@@ -185,7 +185,7 @@ class CapitalConnectionProfitView(ui.View):
         net_yield = gross_yield - (float(self._num_tiles_field.text) * ROAD_COST_PER_TILE)
         self._gross_yield_label.text = str(round(gross_yield, 2))
         if net_yield <= 0:
-            _net_yield_label.background_color = "#ff0000"
+            self._net_yield_label.background_color = "#ff0000"
         self._net_yield_label.text = str(round(net_yield, 2))
 
 
