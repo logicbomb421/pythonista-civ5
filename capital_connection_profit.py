@@ -3,6 +3,9 @@ import ui
 # Pythonista Constants
 IPHONE_XS_WIDTH = 375
 SYSTEM_FONT = "<system>"
+COLOR_RED = "#ff0000"
+COLOR_GREEN = "#00ff00"
+COLOR_WHITE = "#ffffff"
 
 # Civ V Constants
 ROAD_COST_PER_TILE = 1
@@ -82,10 +85,7 @@ class CapitalConnectionProfitView(ui.View):
     def _gross_yield_label(self):
         if not self.__gross_yield_label:
             self.__gross_yield_label = ui.Label(
-                name="gross_yield_label",
-                frame=(184, 313, 150, 32),
-                font=(SYSTEM_FONT, 18),
-                keyboard_type=ui.KEYBOARD_NUMBER_PAD,
+                name="gross_yield_label", frame=(184, 313, 150, 32), font=(SYSTEM_FONT, 18), alignment=ui.ALIGN_CENTER
             )
         return self.__gross_yield_label
 
@@ -96,7 +96,7 @@ class CapitalConnectionProfitView(ui.View):
                 name="net_yield_label",
                 frame=(184, 353, 150, 32),
                 font=(SYSTEM_FONT, 18),
-                keyboard_type=ui.KEYBOARD_NUMBER_PAD,
+                alignment=ui.ALIGN_CENTER,
             )
         return self.__net_yield_label
 
@@ -174,18 +174,27 @@ class CapitalConnectionProfitView(ui.View):
         )
         self.add_subview(self._net_yield_label)
 
+    def _clear(self, inputs=False):
+        self._gross_yield_label.text = ""
+        self._net_yield_label.text = ""
+        self._net_yield_label.background_color = COLOR_WHITE
+        if inputs:
+            self._cap_city_citizen_field.text = ""
+            self._conn_city_citizen_field.text = ""
+            self._num_tiles_field.text = ""
+
     def _calculate(self, sender):
         """
         ref: https://gaming.stackexchange.com/a/8207
         """
+        self._clear(self._clear_on_calculate_switch.value)
         # TODO: implement machu pichu and arabia modifiers
         gross_yield = (
             (float(self._conn_city_citizen_field.text) * 1.1) + (float(self._cap_city_citizen_field.text) * 0.15) - 1
         )
         net_yield = gross_yield - (float(self._num_tiles_field.text) * ROAD_COST_PER_TILE)
         self._gross_yield_label.text = str(round(gross_yield, 2))
-        if net_yield <= 0:
-            self._net_yield_label.background_color = "#ff0000"
+        self._net_yield_label.background_color = COLOR_RED if net_yield <= 0 else COLOR_GREEN
         self._net_yield_label.text = str(round(net_yield, 2))
 
 
