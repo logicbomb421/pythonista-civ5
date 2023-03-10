@@ -3,8 +3,14 @@ import ui
 road_cost_per_tile = 1
 
 
+def _clear_state(all = False):
+    pass
+
+
 @ui.in_background
 def calculate(sender):
+    clear_on_calculate_switch = sender.superview["clear_on_calculate_switch"]
+    _clear_state(clear_on_calculate_switch.value)
     cap_city_citizens_field = sender.superview["cap_city_citizen_field"]
     conn_city_citizens_field = sender.superview["conn_city_citizen_field"]
     num_tiles_field = sender.superview["num_tiles_field"]
