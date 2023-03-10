@@ -21,7 +21,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="title",
                 frame=(0, 0, IPHONE_XS_WIDTH, 45),
-                font_size=24,
+                font=("<system-bold>", 24),
                 text="Capital Connection Profit",
                 alignment=ui.ALIGN_CENTER,
             )
