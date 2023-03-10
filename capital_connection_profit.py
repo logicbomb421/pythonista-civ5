@@ -7,8 +7,11 @@ SYSTEM_FONT = "<system>"
 class CapitalConnectionProfitView(ui.View):
     __conn_city_citizen_field = None
     __cap_city_citizen_field = None
+    __num_tiles_field = None
     __clear_on_calculate_switch = None
     __calculate_button = None
+    __gross_yield_label = None
+    __net_yield_label = None
 
     @property
     def _conn_city_citizen_field(self):
@@ -16,7 +19,7 @@ class CapitalConnectionProfitView(ui.View):
             self.__conn_city_citizen_field = ui.TextField(
                 name="conn_city_citizen_field",
                 frame=(222, 72, 83, 32),
-                font=("<system>", 17),
+                font=(SYSTEM_FONT, 17),
                 border_width=1,
                 corner_radius=5,
                 keyboard_type=ui.KEYBOARD_NUMBER_PAD,
@@ -29,12 +32,25 @@ class CapitalConnectionProfitView(ui.View):
             self.__cap_city_citizen_field = ui.TextField(
                 name="cap_city_citizen_field",
                 frame=(222, 112, 83, 32),
-                font=("<system>", 17),
+                font=(SYSTEM_FONT, 17),
                 border_width=1,
                 corner_radius=5,
                 keyboard_type=ui.KEYBOARD_NUMBER_PAD,
             )
         return self.__cap_city_citizen_field
+
+    @property
+    def _num_tiles_field(self):
+        if not self.__num_tiles_field:
+            self.__num_tiles_field = ui.TextField(
+                name="num_tiles_field",
+                frame=(222, 152, 83, 32),
+                font=(SYSTEM_FONT, 17),
+                border_width=1,
+                corner_radius=5,
+                keyboard_type=ui.KEYBOARD_NUMBER_PAD,
+            )
+        return self.__num_tiles_field
 
     @property
     def _clear_on_calculate_switch(self):
@@ -54,9 +70,31 @@ class CapitalConnectionProfitView(ui.View):
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
-                action=self._calculate,
+                action=lambda: self._calculate(),
             )
         return self.__calculate_button
+
+    @property
+    def _gross_yield_label(self):
+        if not self.__gross_yield_label:
+            self.__gross_yield_label = ui.Label(
+                name="gross_yield_label",
+                frame=(184, 313, 150, 32),
+                font=(SYSTEM_FONT, 18),
+                keyboard_type=ui.KEYBOARD_NUMBER_PAD,
+            )
+        return self.__gross_yield_label
+
+    @property
+    def _net_yield_label(self):
+        if not self.__net_yield_label:
+            self.__net_yield_label = ui.Label(
+                name="net_yield_label",
+                frame=(184, 353, 150, 32),
+                font=(SYSTEM_FONT, 18),
+                keyboard_type=ui.KEYBOARD_NUMBER_PAD,
+            )
+        return self.__net_yield_label
 
     def __init__(self):
         self.frame = (0, 0, 150, 150)
@@ -92,22 +130,40 @@ class CapitalConnectionProfitView(ui.View):
             )
         )
         self.add_subview(self._cap_city_citizen_field)
+        self.add_subview(
+            ui.Label(
+                name="num_tiles_label",
+                frame=(6, 152, 208, 32),
+                font=(SYSTEM_FONT, 18),
+                text="Tiles to Connect",
+            )
+        )
+        self.add_subview(self._num_tiles_field)
         self.add_subview(self._clear_on_calculate_switch)
         self.add_subview(self._calculate_button)
+        self.add_subview(
+            ui.Label(
+                name="gy_label",
+                text="Gross Yield",
+                frame=(17, 313, 150, 32),
+                alignment=ui.ALIGN_CENTER,
+                font=(SYSTEM_FONT, 22),
+            )
+        )
+        self.add_subview(self._gross_yield_label)
+        self.add_subview(
+            ui.Label(
+                name="ny_label",
+                text="Net Yield",
+                frame=(17, 353, 150, 32),
+                alignment=ui.ALIGN_CENTER,
+                font=(SYSTEM_FONT, 22),
+            )
+        )
+        self.add_subview(self._net_yield_label)
 
     def _calculate(self):
-        pass
-
-    def _build_input(self):
-        self._build_connecting()
-        self._build_capital()
-        # swtich
-        # calc button
-
-    def _build_output(self):
-        pass
-        # gross yield
-        # net yield
+        print("calculate stub")
 
 
 CapitalConnectionProfitView().present("fullscreen")
