@@ -83,7 +83,7 @@ class CapitalConnectionProfitView(ui.View):
             self.__calculate_button = ui.Button(
                 name="calc_button",
                 title="Calculate",
-                frame=(88, 322, 200, 47),
+                frame=(88, 250, 200, 47),
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
@@ -96,7 +96,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__gross_yield_label:
             self.__gross_yield_label = ui.Label(
                 name="gross_yield_label",
-                frame=(184, 385, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(184, 313, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 alignment=ui.ALIGN_CENTER,
             )
@@ -107,7 +107,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__net_yield_label:
             self.__net_yield_label = ui.Label(
                 name="net_yield_label",
-                frame=(184, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(184, 353, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 alignment=ui.ALIGN_CENTER,
             )
@@ -179,7 +179,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="gy_label",
                 text="Gross Yield",
-                frame=(17, 385, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(17, 313, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
@@ -189,7 +189,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="ny_label",
                 text="Net Yield",
-                frame=(17, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(17, 353, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
