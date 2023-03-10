@@ -83,7 +83,7 @@ class CapitalConnectionProfitView(ui.View):
             self.__calculate_button = ui.Button(
                 name="calc_button",
                 title="Calculate",
-                frame=(88, 322, 200, 47),
+                frame=(88, 308, 200, 47),
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
