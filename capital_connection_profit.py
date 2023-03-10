@@ -19,7 +19,7 @@ class CapitalConnectionProfitView(ui.View):
 
     def _build_input(self):
         self._build_capital()
-        self._biuild_connecting()
+        self._build_connecting()
         # swtich
         # calc button
 
