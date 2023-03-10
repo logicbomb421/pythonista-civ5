@@ -107,7 +107,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__net_yield_label:
             self.__net_yield_label = ui.Label(
                 name="net_yield_label",
-                frame=(184, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(184, 420, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 alignment=ui.ALIGN_CENTER,
             )
@@ -160,7 +160,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="machu_pichu_label",
                 frame=(6, 192, 208, DEFAULT_CONTROL_HEIGHT_PX),
-                font=(SYSTEM_FONT, 18),
+                font=(SYSTEM_FONT, 16),
                 text="Machu Pichu in Conn City?",
             )
         )
@@ -179,7 +179,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="gy_label",
                 text="Gross Yield",
-                frame=(17, 385, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(17, 380, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
@@ -189,7 +189,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="ny_label",
                 text="Net Yield",
-                frame=(17, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                frame=(17, 420, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
@@ -200,11 +200,10 @@ class CapitalConnectionProfitView(ui.View):
         """
         ref: https://gaming.stackexchange.com/a/8207
         """
-        # TODO: implement arabia modifier
         gross_yield = (
             (float(self._conn_city_citizen_field.text) * (1.1 if not self._machu_pichu_switch.value else 1.3))
             + (float(self._cap_city_citizen_field.text) * 0.15)
-            - 1
+            - (1 if not self._arabia_switch.value else 0)
         )
         net_yield = gross_yield - (float(self._num_tiles_field.text) * ROAD_COST_PER_TILE)
         self._gross_yield_label.text = str(round(gross_yield, 2))
