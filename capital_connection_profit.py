@@ -178,10 +178,10 @@ class CapitalConnectionProfitView(ui.View):
         self._gross_yield_label.text = ""
         self._net_yield_label.text = ""
         self._net_yield_label.background_color = COLOR_WHITE
-        if inputs:
-            self._cap_city_citizen_field.text = ""
-            self._conn_city_citizen_field.text = ""
-            self._num_tiles_field.text = ""
+        # if inputs:
+        #     self._cap_city_citizen_field.text = ""
+        #     self._conn_city_citizen_field.text = ""
+        #     self._num_tiles_field.text = ""
 
     def _calculate(self, sender):
         """
