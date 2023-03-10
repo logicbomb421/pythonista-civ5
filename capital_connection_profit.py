@@ -1,5 +1,7 @@
 import ui
 
+IPHONE_XS_WIDTH = 375
+
 
 class CapitalConnectionProfitView(ui.View):
     def __init__(self):
@@ -15,7 +17,15 @@ class CapitalConnectionProfitView(ui.View):
         self._build_output()
 
     def _build_title(self):
-        self.add_subview(ui.Label(name="title", frame=(0, 0, 323, 45), font_size=24, text="Capital Connection Profit"))
+        self.add_subview(
+            ui.Label(
+                name="title",
+                frame=(0, 0, IPHONE_XS_WIDTH, 45),
+                font_size=24,
+                text="Capital Connection Profit",
+                alignment="center",
+            )
+        )
 
     def _build_input(self):
         self._build_capital()
