@@ -245,7 +245,7 @@
           "frame" : "{{162, 347}, {51, 31}}",
           "value" : true,
           "class" : "Switch",
-          "name" : "clear_on_calculate",
+          "name" : "clear_on_calculate_switch",
           "uuid" : "84123287-ED73-4203-B934-24D9F68C2FA1"
         },
         "selected" : true
