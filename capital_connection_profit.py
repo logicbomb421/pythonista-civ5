@@ -15,7 +15,7 @@ class CapitalConnectionProfitView(ui.View):
     __conn_city_citizen_field = None
     __cap_city_citizen_field = None
     __num_tiles_field = None
-    __clear_on_calculate_switch = None
+    __machu_pichu_switch = None
     __calculate_button = None
     __gross_yield_label = None
     __net_yield_label = None
@@ -60,12 +60,12 @@ class CapitalConnectionProfitView(ui.View):
         return self.__num_tiles_field
 
     @property
-    def _clear_on_calculate_switch(self):
-        if not self.__clear_on_calculate_switch:
-            self.__clear_on_calculate_switch = ui.Switch(
-                name="clear_on_calculate_switch", frame=(222, 193, 51, 31), value=True
+    def _machu_pichu_switch(self):
+        if not self.__machu_pichu_switch:
+            self.__machu_pichu_switch = ui.Switch(
+                name="machu_pichu_switch_switch", frame=(222, 193, 51, 31), value=False
             )
-        return self.__clear_on_calculate_switch
+        return self.__machu_pichu_switch
 
     @property
     def _calculate_button(self):
@@ -145,13 +145,13 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(self._num_tiles_field)
         self.add_subview(
             ui.Label(
-                name="clear_on_calculate_label",
+                name="machu_pichu_label",
                 frame=(6, 192, 208, 32),
                 font=(SYSTEM_FONT, 18),
-                text="Clear on Calculate",
+                text="Machu Pichu in Conn City?",
             )
         )
-        self.add_subview(self._clear_on_calculate_switch)
+        self.add_subview(self._machu_pichu_switch)
         self.add_subview(self._calculate_button)
         self.add_subview(
             ui.Label(
@@ -174,20 +174,16 @@ class CapitalConnectionProfitView(ui.View):
         )
         self.add_subview(self._net_yield_label)
 
-    def _clear(self, inputs=False):
-        self._gross_yield_label.text = ""
-        self._net_yield_label.text = ""
-        self._net_yield_label.background_color = COLOR_WHITE
-        # if inputs:
-        #     self._cap_city_citizen_field.text = ""
-        #     self._conn_city_citizen_field.text = ""
-        #     self._num_tiles_field.text = ""
+    # def _clear(self):
+    #     self._gross_yield_label.text = ""
+    #     self._net_yield_label.text = ""
+    #     self._net_yield_label.background_color = COLOR_WHITE
 
     def _calculate(self, sender):
         """
         ref: https://gaming.stackexchange.com/a/8207
         """
-        self._clear(self._clear_on_calculate_switch.value)
+        # self._clear()
         # TODO: implement machu pichu and arabia modifiers
         gross_yield = (
             (float(self._conn_city_citizen_field.text) * 1.1) + (float(self._cap_city_citizen_field.text) * 0.15) - 1
