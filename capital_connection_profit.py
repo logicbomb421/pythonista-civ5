@@ -6,6 +6,7 @@ SYSTEM_FONT = "<system>"
 COLOR_RED = "#ff0000"
 COLOR_GREEN = "#00ff00"
 COLOR_WHITE = "#ffffff"
+DEFAULT_CONTROL_HEIGHT_PX = 32
 
 # Civ V Constants
 ROAD_COST_PER_TILE = 1
@@ -16,6 +17,7 @@ class CapitalConnectionProfitView(ui.View):
     __cap_city_citizen_field = None
     __num_tiles_field = None
     __machu_pichu_switch = None
+    __arabia_switch = None
     __calculate_button = None
     __gross_yield_label = None
     __net_yield_label = None
@@ -25,7 +27,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__conn_city_citizen_field:
             self.__conn_city_citizen_field = ui.TextField(
                 name="conn_city_citizen_field",
-                frame=(222, 72, 83, 32),
+                frame=(222, 72, 83, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 17),
                 border_width=1,
                 corner_radius=5,
@@ -38,7 +40,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__cap_city_citizen_field:
             self.__cap_city_citizen_field = ui.TextField(
                 name="cap_city_citizen_field",
-                frame=(222, 112, 83, 32),
+                frame=(222, 112, 83, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 17),
                 border_width=1,
                 corner_radius=5,
@@ -51,7 +53,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__num_tiles_field:
             self.__num_tiles_field = ui.TextField(
                 name="num_tiles_field",
-                frame=(222, 152, 83, 32),
+                frame=(222, 152, 83, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 17),
                 border_width=1,
                 corner_radius=5,
@@ -63,9 +65,17 @@ class CapitalConnectionProfitView(ui.View):
     def _machu_pichu_switch(self):
         if not self.__machu_pichu_switch:
             self.__machu_pichu_switch = ui.Switch(
-                name="machu_pichu_switch_switch", frame=(222, 193, 51, 31), value=False
+                name="machu_pichu_switch", frame=(222, 192, 51, DEFAULT_CONTROL_HEIGHT_PX), value=False
             )
         return self.__machu_pichu_switch
+
+    @property
+    def _arabia_switch(self):
+        if not self.__arabia_switch:
+            self.__arabia_switch = ui.Switch(
+                name="arabia_switch", frame=(222, 232, 51, DEFAULT_CONTROL_HEIGHT_PX), value=False
+            )
+        return self.__arabia_switch
 
     @property
     def _calculate_button(self):
@@ -73,7 +83,7 @@ class CapitalConnectionProfitView(ui.View):
             self.__calculate_button = ui.Button(
                 name="calc_button",
                 title="Calculate",
-                frame=(88, 250, 200, 47),
+                frame=(88, 322, 200, 47),
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
@@ -85,7 +95,10 @@ class CapitalConnectionProfitView(ui.View):
     def _gross_yield_label(self):
         if not self.__gross_yield_label:
             self.__gross_yield_label = ui.Label(
-                name="gross_yield_label", frame=(184, 313, 150, 32), font=(SYSTEM_FONT, 18), alignment=ui.ALIGN_CENTER
+                name="gross_yield_label",
+                frame=(184, 385, 150, DEFAULT_CONTROL_HEIGHT_PX),
+                font=(SYSTEM_FONT, 18),
+                alignment=ui.ALIGN_CENTER,
             )
         return self.__gross_yield_label
 
@@ -94,7 +107,7 @@ class CapitalConnectionProfitView(ui.View):
         if not self.__net_yield_label:
             self.__net_yield_label = ui.Label(
                 name="net_yield_label",
-                frame=(184, 353, 150, 32),
+                frame=(184, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 alignment=ui.ALIGN_CENTER,
             )
@@ -119,7 +132,7 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(
             ui.Label(
                 name="connecting_label",
-                frame=(6, 72, 208, 32),
+                frame=(6, 72, 208, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 text="Connecting City Citizens",
             )
@@ -128,7 +141,7 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(
             ui.Label(
                 name="capital_label",
-                frame=(6, 112, 208, 32),
+                frame=(6, 112, 208, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 text="Capital City Citizens",
             )
@@ -137,7 +150,7 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(
             ui.Label(
                 name="num_tiles_label",
-                frame=(6, 152, 208, 32),
+                frame=(6, 152, 208, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 text="Tiles to Connect",
             )
@@ -146,18 +159,27 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(
             ui.Label(
                 name="machu_pichu_label",
-                frame=(6, 192, 208, 32),
+                frame=(6, 192, 208, DEFAULT_CONTROL_HEIGHT_PX),
                 font=(SYSTEM_FONT, 18),
                 text="Machu Pichu in Conn City?",
             )
         )
         self.add_subview(self._machu_pichu_switch)
+        self.add_subview(
+            ui.Label(
+                name="arabia_label",
+                frame=(6, 232, 208, DEFAULT_CONTROL_HEIGHT_PX),
+                font=(SYSTEM_FONT, 18),
+                text="Are You Arabia?",
+            )
+        )
+        self.add_subview(self._arabia_switch)
         self.add_subview(self._calculate_button)
         self.add_subview(
             ui.Label(
                 name="gy_label",
                 text="Gross Yield",
-                frame=(17, 313, 150, 32),
+                frame=(17, 385, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
@@ -167,7 +189,7 @@ class CapitalConnectionProfitView(ui.View):
             ui.Label(
                 name="ny_label",
                 text="Net Yield",
-                frame=(17, 353, 150, 32),
+                frame=(17, 425, 150, DEFAULT_CONTROL_HEIGHT_PX),
                 alignment=ui.ALIGN_CENTER,
                 font=(SYSTEM_FONT, 22),
             )
