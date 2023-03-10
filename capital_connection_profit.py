@@ -1,7 +1,11 @@
 import ui
 
+# Pythonista Constants
 IPHONE_XS_WIDTH = 375
 SYSTEM_FONT = "<system>"
+
+# Civ V Constants
+ROAD_COST_PER_TILE = 1
 
 
 class CapitalConnectionProfitView(ui.View):
@@ -171,7 +175,18 @@ class CapitalConnectionProfitView(ui.View):
         self.add_subview(self._net_yield_label)
 
     def _calculate(self, sender):
-        print("calculate stub")
+        """
+        ref: https://gaming.stackexchange.com/a/8207
+        """
+        # TODO: implement machu pichu and arabia modifiers
+        gross_yield = (
+            (float(self._conn_city_citizen_field.text) * 1.1) + (float(self._cap_city_citizen_field.text) * 0.15) - 1
+        )
+        net_yield = gross_yield - (float(self._num_tiles_field.text) * ROAD_COST_PER_TILE)
+        gross_yield_label.text = str(round(gross_yield, 2))
+        if net_yield <= 0:
+            net_yield_label.background_color = "#ff0000"
+        net_yield_label.text = str(round(net_yield, 2))
 
 
 CapitalConnectionProfitView().present("fullscreen")
