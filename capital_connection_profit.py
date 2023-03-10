@@ -174,19 +174,15 @@ class CapitalConnectionProfitView(ui.View):
         )
         self.add_subview(self._net_yield_label)
 
-    # def _clear(self):
-    #     self._gross_yield_label.text = ""
-    #     self._net_yield_label.text = ""
-    #     self._net_yield_label.background_color = COLOR_WHITE
-
     def _calculate(self, sender):
         """
         ref: https://gaming.stackexchange.com/a/8207
         """
-        # self._clear()
-        # TODO: implement machu pichu and arabia modifiers
+        # TODO: implement arabia modifier
         gross_yield = (
-            (float(self._conn_city_citizen_field.text) * 1.1) + (float(self._cap_city_citizen_field.text) * 0.15) - 1
+            (float(self._conn_city_citizen_field.text) * 1.1 if not self._machu_pichu_switch.value else 1.3)
+            + (float(self._cap_city_citizen_field.text) * 0.15)
+            - 1
         )
         net_yield = gross_yield - (float(self._num_tiles_field.text) * ROAD_COST_PER_TILE)
         self._gross_yield_label.text = str(round(gross_yield, 2))
