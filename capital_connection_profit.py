@@ -23,7 +23,7 @@ class CapitalConnectionProfitView(ui.View):
                 frame=(0, 0, IPHONE_XS_WIDTH, 45),
                 font_size=24,
                 text="Capital Connection Profit",
-                alignment="center",
+                alignment=ui.ALIGN_CENTER,
             )
         )
 
