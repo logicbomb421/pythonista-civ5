@@ -51,7 +51,7 @@ class CapitalConnectionProfitView(ui.View):
             )
         )
 
-    def _build_connecting(self):
+    def _build_capital(self):
         self.add_subview(
             ui.Label(
                 name="capital_label",
