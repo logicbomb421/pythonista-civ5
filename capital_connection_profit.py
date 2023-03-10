@@ -180,7 +180,7 @@ class CapitalConnectionProfitView(ui.View):
         """
         # TODO: implement arabia modifier
         gross_yield = (
-            (float(self._conn_city_citizen_field.text) * 1.1 if not self._machu_pichu_switch.value else 1.3)
+            (float(self._conn_city_citizen_field.text) * (1.1 if not self._machu_pichu_switch.value else 1.3))
             + (float(self._cap_city_citizen_field.text) * 0.15)
             - 1
         )
