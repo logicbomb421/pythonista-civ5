@@ -36,6 +36,7 @@ class MainView(ui.View):
                 corner_radius=5,
                 action=lambda sender: self.navigation_view.push_view(CapitalConnectionProfitView()),
             )
+        return self.__capital_city_connection_yield_button
 
     def __init__(self):
         self.add_subview(self._capital_city_connection_yield_button)
