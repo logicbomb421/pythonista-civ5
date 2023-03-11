@@ -84,6 +84,8 @@ class CapitalConnectionProfitView(ui.View):
                 name="calc_button",
                 title="Calculate",
                 frame=(88, 308, 200, 47),
+                width=200,
+                height=47,
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
