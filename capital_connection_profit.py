@@ -83,9 +83,8 @@ class CapitalConnectionProfitView(ui.View):
             self.__calculate_button = ui.Button(
                 name="calc_button",
                 title="Calculate",
+                # TODO: button sizing (200x47) doesn't seem to be respected here
                 frame=(88, 308, 200, 47),
-                width=200,
-                height=47,
                 font=(SYSTEM_FONT, 15),
                 border_width=1,
                 corner_radius=5,
@@ -118,10 +117,15 @@ class CapitalConnectionProfitView(ui.View):
     def __init__(self):
         self.frame = (0, 0, 150, 150)
         self.background_color = "#ffffff"
+        self.left_button_items = [
+            ui.ButtonItem("First Item"),
+            ui.ButtonItem("Second Item"),
+            ui.ButtonItem("Third Item"),
+        ]
         self._build()
 
     def _build(self):
-        # NOTE: only storing fields we need to interact with at the class level
+        # FYI: only storing fields we need to interact with at the class level
         self.add_subview(
             ui.Label(
                 name="title",
