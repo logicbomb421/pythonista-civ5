@@ -21,8 +21,10 @@ class MainView(ui.View):
 ui.NavigationView(MainView()).present(
     style="default",
     animated=True,
-    popover_location=None,
+    popover_location=[],
     hide_title_bar=False,
     title_bar_color=None,
     title_color=None,
+    orientations=["portrait"],
+    hide_close_button=False,
 )
