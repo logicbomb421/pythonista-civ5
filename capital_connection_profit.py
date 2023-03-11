@@ -1,15 +1,5 @@
 import ui
-
-# Pythonista Constants
-IPHONE_XS_WIDTH = 375
-SYSTEM_FONT = "<system>"
-COLOR_RED = "#ff0000"
-COLOR_GREEN = "#00ff00"
-COLOR_WHITE = "#ffffff"
-DEFAULT_CONTROL_HEIGHT_PX = 32
-
-# Civ V Constants
-ROAD_COST_PER_TILE = 1
+from constants import *
 
 
 class CapitalConnectionProfitView(ui.View):
