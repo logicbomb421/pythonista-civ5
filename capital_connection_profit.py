@@ -115,7 +115,7 @@ class CapitalConnectionProfitView(ui.View):
 
     def __init__(self):
         self.frame = (0, 0, 150, 150)
-        self.background_color = "#ffffff"
+        self.background_color = "#777"
         self._build()
 
     def _build(self):
