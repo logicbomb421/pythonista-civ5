@@ -26,5 +26,4 @@ ui.NavigationView(MainView()).present(
     title_bar_color=None,
     title_color=None,
     orientations=["portrait"],
-    hide_close_button=False,
 )
