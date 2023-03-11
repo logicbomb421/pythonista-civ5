@@ -18,4 +18,13 @@ class MainView(ui.View):
         )
 
 
-ui.NavigationView(MainView()).present("fullscreen", True, None, True, None, None, ["portrait"], True)
+ui.NavigationView(MainView()).present(
+    style="default",
+    animated=True,
+    popover_location=None,
+    hide_title_bar=False,
+    title_bar_color=None,
+    title_color=None,
+    orientations=None,
+    hide_close_button=False,
+)
