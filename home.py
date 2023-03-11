@@ -21,7 +21,7 @@ class MainView(ui.View):
 ui.NavigationView(MainView()).present(
     style="default",
     animated=True,
-    popover_location=[],
+    popover_location=(0, 0),
     hide_title_bar=False,
     title_bar_color=None,
     title_color=None,
