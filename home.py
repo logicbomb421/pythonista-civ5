@@ -22,9 +22,9 @@ ui.NavigationView(MainView()).present(
     style="fullscreen",
     animated=True,
     popover_location=(0, 0),
-    hide_title_bar=False,
+    hide_title_bar=True,
     title_bar_color=None,
     title_color=None,
     orientations=["portrait"],
-    hide_close_button=False,
+    hide_close_button=True,
 )
