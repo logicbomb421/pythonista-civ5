@@ -220,4 +220,5 @@ class CapitalConnectionProfitView(ui.View):
         self._net_yield_label.text = str(round(net_yield, 2))
 
 
-CapitalConnectionProfitView().present("fullscreen")
+if __name__ == "__main__":
+    CapitalConnectionProfitView().present("fullscreen")

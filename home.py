@@ -1,32 +1,29 @@
 import ui
-
-road_cost_per_tile = 1
-
-
-def _clear_state(all = False):
-    pass
+from capital_connection_profit import CapitalConnectionProfitView
 
 
-@ui.in_background
-def calculate(sender):
-    clear_on_calculate_switch = sender.superview["clear_on_calculate_switch"]
-    _clear_state(clear_on_calculate_switch.value)
-    cap_city_citizens_field = sender.superview["cap_city_citizen_field"]
-    conn_city_citizens_field = sender.superview["conn_city_citizen_field"]
-    num_tiles_field = sender.superview["num_tiles_field"]
-    gross_yield_label = sender.superview["gross_yield_label"]
-    net_yield_label = sender.superview["net_yield_label"]
+class NavigationView(ui.NavigationView):
+    __capital_city_connection_yield_button = None
 
-    cap_city_citizens = float(cap_city_citizens_field.text)
-    conn_city_citizens = float(conn_city_citizens_field.text)
-    gross_yield = (conn_city_citizens * 1.1) + (cap_city_citizens * 0.15) - 1
-    net_yield = gross_yield - (float(num_tiles_field.text) * road_cost_per_tile)
-    gross_yield_label.text = str(round(gross_yield, 2))
-    if net_yield <= 0:
-        net_yield_label.background_color = "#ff0000"
-    net_yield_label.text = str(round(net_yield, 2))
+    @property
+    def _capital_city_connection_yield_button(self):
+        if not self.__capital_city_connection_yield_button:
+            self.__capital_city_connection_yield_button = ui.Button(
+                name="cap_city_conn_button",
+                title="Capital City Connection Yield",
+                font=(SYSTEM_FONT, 15),
+                border_width=1,
+                corner_radius=5,
+                action=lambda sender: self.push_view(CapitalConnectionProfitView()),
+            )
+
+    def __init__(self):
+        self.add_subview(self._capital_city_connection_yield_button)
 
 
-v = ui.load_view("home")
-v.size_to_fit()
-v.present("fullscreen")
+class MainView(ui.View):
+    def __init__(self):
+        self.add_subview(NavigationView())
+
+
+MainView().present("fullscreen")
