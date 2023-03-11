@@ -5,7 +5,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{0, 0}, {323, 45}}",
+        "frame" : "{{0, 0}, {375, 45}}",
         "class" : "Label",
         "attributes" : {
           "border_width" : 0,
@@ -19,7 +19,7 @@
           "font_size" : 24,
           "font_name" : "<System>"
         },
-        "selected" : false
+        "selected" : true
       },
       {
         "nodes" : [
@@ -51,7 +51,7 @@
           "uuid" : "C6C092E9-EC22-4ED5-A60D-DE1A913AC092",
           "class" : "Label",
           "alignment" : "left",
-          "text" : " Capital City Citizens",
+          "text" : "Capital City Citizens",
           "font_size" : 18,
           "font_name" : "<System>"
         },
@@ -103,10 +103,11 @@
         "nodes" : [
 
         ],
-        "frame" : "{{58, 167}, {200, 47}}",
+        "frame" : "{{88, 250}, {200, 47}}",
         "class" : "Button",
         "attributes" : {
           "border_width" : 1,
+          "action" : "calculate",
           "frame" : "{{122, 183}, {80, 32}}",
           "title" : "Calculate",
           "uuid" : "CC46DFA4-B584-404D-88A5-535EC2656EF3",
@@ -121,7 +122,7 @@
         "nodes" : [
 
         ],
-        "frame" : "{{84, 242}, {150, 32}}",
+        "frame" : "{{17, 313}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
           "name" : "label3",
@@ -129,7 +130,7 @@
           "uuid" : "5EA87605-AD8E-4DA6-82D3-B33EA4DA563F",
           "class" : "Label",
           "alignment" : "center",
-          "text" : "Result",
+          "text" : "Gross Yield",
           "font_size" : 22,
           "font_name" : "<System>"
         },
@@ -139,11 +140,12 @@
         "nodes" : [
 
         ],
-        "frame" : "{{84, 282}, {150, 32}}",
+        "frame" : "{{184, 313}, {150, 32}}",
         "class" : "Label",
         "attributes" : {
-          "name" : "result_label",
-          "border_width" : 1,
+          "border_width" : 0,
+          "flex" : "",
+          "name" : "gross_yield_label",
           "frame" : "{{87, 183}, {150, 32}}",
           "uuid" : "DE47696A-29B7-46B3-9AAF-7839A7E0655C",
           "class" : "Label",
@@ -154,9 +156,120 @@
           "font_name" : "<System>"
         },
         "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 152}, {208, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_name" : "<System>",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "C6C092E9-EC22-4ED5-A60D-DE1A913AC092",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Tiles to Connect",
+          "name" : "label2",
+          "font_size" : 18
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{222, 152}, {83, 32}}",
+        "class" : "TextField",
+        "attributes" : {
+          "border_width" : 1,
+          "name" : "num_tiles_field",
+          "frame" : "{{62, 183}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "F363C8F4-AF8A-4EA4-BF7B-1F7D67184B28",
+          "alignment" : "left",
+          "corner_radius" : 5,
+          "autocorrection_type" : "default",
+          "font_size" : 17,
+          "font_name" : "<System>"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{17, 353}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_name" : "<System>",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "5EA87605-AD8E-4DA6-82D3-B33EA4DA563F",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "Net Yield",
+          "name" : "label3",
+          "font_size" : 22
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{184, 353}, {150, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "border_width" : 0,
+          "flex" : "",
+          "font_name" : "<System>",
+          "frame" : "{{87, 183}, {150, 32}}",
+          "uuid" : "DE47696A-29B7-46B3-9AAF-7839A7E0655C",
+          "class" : "Label",
+          "alignment" : "center",
+          "text" : "",
+          "corner_radius" : 5,
+          "name" : "net_yield_label",
+          "font_size" : 18
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{222, 193}, {51, 31}}",
+        "class" : "Switch",
+        "attributes" : {
+          "frame" : "{{162, 347}, {51, 31}}",
+          "value" : true,
+          "class" : "Switch",
+          "name" : "clear_on_calculate_switch",
+          "uuid" : "84123287-ED73-4203-B934-24D9F68C2FA1"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 192}, {208, 32}}",
+        "class" : "Label",
+        "attributes" : {
+          "font_size" : 18,
+          "frame" : "{{113, 346}, {150, 32}}",
+          "uuid" : "DCDB4EAB-D00F-406F-8E23-7023AE7ED942",
+          "class" : "Label",
+          "alignment" : "left",
+          "text" : "Clear on Calculate",
+          "name" : "label4",
+          "font_name" : "<System>"
+        },
+        "selected" : false
       }
     ],
-    "frame" : "{{0, 0}, {323, 397}}",
+    "frame" : "{{0, 0}, {375, 724}}",
     "class" : "View",
     "attributes" : {
       "enabled" : true,

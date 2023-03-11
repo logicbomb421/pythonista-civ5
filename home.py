@@ -1,17 +1,30 @@
 import ui
+from constants import *
+from capital_connection_profit import CapitalConnectionProfitView
 
 
-@ui.in_background
-def calculate(sender):
-    cap_city_citizens_field = sender.superview["cap_city_citizen_field"]
-    conn_city_citizens_field = sender.superview["conn_city_citizen_field"]
-    result_label = sender.superview["result_label"]
+class MainView(ui.View):
+    def __init__(self):
+        self.background_color = "#ffffff"
+        self.add_subview(
+            ui.Button(
+                name="cap_city_conn_button",
+                title="Capital City Connection Yield",
+                font=(SYSTEM_FONT, 15),
+                border_width=1,
+                corner_radius=5,
+                action=lambda sender: self.navigation_view.push_view(CapitalConnectionProfitView()),
+            )
+        )
 
-    cap_city_citizens = float(cap_city_citizens_field.text)
-    conn_city_citizens = float(conn_city_citizens_field.text)
-    result = (conn_city_citizens * 1.1) + (cap_city_citizens * 0.15) - 1
-    result_label.text = str(result)
 
-
-v = ui.load_view("home")
-v.present("fullscreen")
+ui.NavigationView(MainView()).present(
+    style="fullscreen",
+    animated=True,
+    popover_location=(0, 0),
+    hide_title_bar=True,
+    title_bar_color=None,
+    title_color=None,
+    orientations=["portrait"],
+    hide_close_button=True,
+)
