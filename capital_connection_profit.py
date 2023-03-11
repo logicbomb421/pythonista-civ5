@@ -115,7 +115,7 @@ class CapitalConnectionProfitView(ui.View):
 
     def __init__(self):
         self.frame = (0, 0, 150, 150)
-        self.background_color = "#777"
+        self.background_color = "#ffffff"
         self._build()
 
     def _build(self):
@@ -200,6 +200,9 @@ class CapitalConnectionProfitView(ui.View):
         """
         ref: https://gaming.stackexchange.com/a/8207
         """
+        self._conn_city_citizen_field.end_editing()
+        self._cap_city_citizen_field.end_editing()
+        self._num_tiles_field.end_editing()
         gross_yield = (
             (float(self._conn_city_citizen_field.text) * (1.1 if not self._machu_pichu_switch.value else 1.3))
             + (float(self._cap_city_citizen_field.text) * 0.15)
