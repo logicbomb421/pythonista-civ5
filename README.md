@@ -3,7 +3,7 @@
 <div align="center">
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
-This is a **_major_** WIP! Right now there is _no_ styling at all, and it basically exists to help me when playing Civ V 🙃.
+This is a **_major_** WIP! Right now there is _no_ styling at all, and it basically exists to help me when playing Civ V 🙃. Eventually this will be rewritten as a native app.
 ⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️⚠️
 
 </div>
