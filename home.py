@@ -19,7 +19,7 @@ class MainView(ui.View):
 
 
 ui.NavigationView(MainView()).present(
-    style="default",
+    style="fullscreen",
     animated=True,
     popover_location=(0, 0),
     hide_title_bar=False,
